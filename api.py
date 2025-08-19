@@ -140,7 +140,7 @@ available_ships = {
     "MOUNT GAEA": ["LNG_TK1", "LNG_TK2"],
     "MOUNT COOK": ["LNG_TK1", "LNG_TK2"],
     "MOUNT ARARAT": ["LNG_TK1", "LNG_TK2"],    
-    "CMA CGM ARCTIC": ["LNG_TK"],
+    "CMA_CGM_ARCTIC": ["LNG_TK"],
     "CMA CGM BALI": ["LNG_TK"],
     "CMA CGM DIGNITY": ["LNG_TK"],
     "CMA CGM HOPE": ["LNG_TK"],
@@ -497,7 +497,7 @@ def get_ship_parameters(ship_id: str) -> Dict[str, Any]:
     elif ship_id in ["MOUNT ANETO", "MOUNT TAI", "MOUNT OSSA", "MOUNT JADEITE", "MOUNT API", "MOUNT AMELIOR", "MOUNT HENG", 
                     "MOUNT GOWER", "MOUNT GAEA", "MOUNT COOK", "MOUNT ARARAT"]:
         return {"BOG_max": 500, "LNG_TK1_cap": 3181.546, "LNG_TK2_cap": 3179.732, "identity": "210k_bulk"}
-    elif ship_id in ["CMA CGM ARCTIC", "CMA CGM BALI", "CMA CGM DIGNITY", "CMA CGM HOPE", "CMA CGM IGUACU",
+    elif ship_id in ["CMA_CGM_ARCTIC", "CMA CGM BALI", "CMA CGM DIGNITY", "CMA CGM HOPE", "CMA CGM IGUACU",
                      "CMA CGM INTEGRITY", "CMA CGM LIBERTY", "CMA CGM PRIDE", "CMA CGM TENERE", "CMA CGM SCANDOLA",
                     "CMA CGM SYMI", "CMA CGM UNITY"]:
         return {"BOG_max": 500, "LNG_TK1_cap": 12448.3, "identity": "CMA_cont"}
@@ -605,7 +605,7 @@ async def calculate_bunkering(
             "OneTankVessel": {
                 "summary": "One-tank vessel (e.g., CMA CGM ARCTIC)",
                 "value": {
-                    "ship_id": "CMA CGM ARCTIC",
+                    "ship_id": "CMA_CGM_ARCTIC",
                     "opening_tank1": {"level": 8500, "vapor_temp": -155, "liquid_temp": -160, "pressure": 0.18},
                     "closing_tank1": {"level": 8600, "vapor_temp": -154, "liquid_temp": -159, "pressure": 0.19},
                     "opening_trim": 0.0,
