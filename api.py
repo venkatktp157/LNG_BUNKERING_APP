@@ -840,7 +840,10 @@ async def calculate_bunkering(
         else:
             print(f"DEBUG: Successfully saved bunkering data to CouchDB with ID: {couchdb_result['doc_id']}")
 
-        return bunkering_response
+        return {
+            "bunkering_response": bunkering_response.dict(),
+            "couchdb_status": couchdb_result
+        }
         
     except Exception as e:
         print(f"=== DEBUG: Error occurred ===")
