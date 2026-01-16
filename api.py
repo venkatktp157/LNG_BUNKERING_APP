@@ -66,6 +66,8 @@ available_ships: Dict[str, List[str]] = {
     "ZIM SCORPIO": ["LNG_TANK"],
     "QUETZAL": ["LNGAS_TK"],
     "COPAN": ["LNGAS_TK"],
+    "TISCAPA": ["LNGAS_TK"],
+    "TOROGOZ": ["LNGAS_TK"],
     "CMA CGM DAYTONA": ["LNG_TK1", "LNG_TK2"],
     "CMA CGM INDIANAPOLIS": ["LNG_TK1", "LNG_TK2"],
     "CMA CGM MONACO": ["LNG_TK1", "LNG_TK2"],
@@ -371,7 +373,7 @@ def get_ship_parameters(ship_id: str) -> Dict[str, Any]:
         return {"BOG_max": 1200, "LNG_TK1_cap": 2324.113, "LNG_TK2_cap": 2322.097, "identity": "110k_tanker"}
     elif ship_id in ["STARWAY", "GREENWAY"]:
         return {"BOG_max": 1200, "LNG_TK1_cap": 2570.133, "LNG_TK2_cap": 2571.517, "identity": "150k_tanker"}
-    elif ship_id in ["QUETZAL", "COPAN"]:
+    elif ship_id in ["QUETZAL", "COPAN", "TISCAPA", "TOROGOZ"]:
         return {"BOG_max": 500, "LNG_TK1_cap": 1613, "identity": "1400TEU_cont"}
     else:
         raise HTTPException(status_code=400, detail=f"Unknown ship ID: {ship_id}")
